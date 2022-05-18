@@ -1,0 +1,79 @@
+syntax = "proto3";
+package note;
+option go_package = "notedemo";
+
+message BaseResp{
+  int64 status_code = 1;
+  string status_message = 2;
+  int64 service_time = 3;
+}
+
+message Note{
+  int64 note_id = 1;
+  int64 user_id = 2;
+  string user_name = 3;
+  string user_avatar = 4;
+  string tile = 5;
+  string content = 6;
+  int64 create_time = 7;
+}
+
+message CreateNoteRequest{
+  string title = 1;
+  string content = 2;
+  int64 user_id = 3;
+}
+
+message CreateNoteResponse{
+  BaseResp base_resp = 1;
+}
+
+message DeleteNoteRequest{
+  int64 note_id = 1;
+  int64 user_id = 2;
+}
+
+message DeleteNoteResponse{
+  BaseResp base_resp = 1;
+}
+
+message UpdateNoteRequest{
+  int64 note_id = 1;
+  int64 user_id = 2;
+  string title = 3;
+  string content = 4;
+}
+
+message UpdateNoteResponse{
+  BaseResp base_resp = 1;
+}
+
+message MGetNoteRequest{
+  repeated int64 note_ids = 1;
+}
+
+message MGetNoteResponse{
+  repeated Note notes = 1;
+  BaseResp base_resp = 2;
+}
+
+message QueryNoteRequest{
+  int64 user_id = 1;
+  string search_key = 2;
+  int64 offset = 3;
+  int64 limit = 4;
+}
+
+message QueryNoteResponse{
+  repeated  Note notes = 1;
+  int64 total = 2;
+  BaseResp base_resp = 3;
+}
+
+service NoteService{
+  rpc CreateNote(CreateNoteResponse) returns (CreateNoteRequest) {}
+  rpc MGetNote(MGetNoteResponse) returns (MGetNoteRequest) {}
+  rpc DeleteNote(DeleteNoteResponse) returns (DeleteNoteRequest) {}
+  rpc QueryNote(QueryNoteResponse) returns (QueryNoteRequest) {}
+  rpc UpdateNote(UpdateNoteResponse) returns (UpdateNoteRequest) {}
+}
