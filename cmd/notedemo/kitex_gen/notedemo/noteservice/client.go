@@ -11,11 +11,11 @@ import (
 
 // Client is designed to provide IDL-compatible methods with call-option parameter for kitex framework.
 type Client interface {
-	CreateNote(ctx context.Context, Req *notedemo.CreateNoteResponse, callOptions ...callopt.Option) (r *notedemo.CreateNoteRequest, err error)
-	MGetNote(ctx context.Context, Req *notedemo.MGetNoteResponse, callOptions ...callopt.Option) (r *notedemo.MGetNoteRequest, err error)
-	DeleteNote(ctx context.Context, Req *notedemo.DeleteNoteResponse, callOptions ...callopt.Option) (r *notedemo.DeleteNoteRequest, err error)
-	QueryNote(ctx context.Context, Req *notedemo.QueryNoteResponse, callOptions ...callopt.Option) (r *notedemo.QueryNoteRequest, err error)
-	UpdateNote(ctx context.Context, Req *notedemo.UpdateNoteResponse, callOptions ...callopt.Option) (r *notedemo.UpdateNoteRequest, err error)
+	CreateNote(ctx context.Context, Req *notedemo.CreateNoteRequest, callOptions ...callopt.Option) (r *notedemo.CreateNoteResponse, err error)
+	MGetNote(ctx context.Context, Req *notedemo.MGetNoteRequest, callOptions ...callopt.Option) (r *notedemo.MGetNoteResponse, err error)
+	DeleteNote(ctx context.Context, Req *notedemo.DeleteNoteRequest, callOptions ...callopt.Option) (r *notedemo.DeleteNoteResponse, err error)
+	QueryNote(ctx context.Context, Req *notedemo.QueryNoteRequest, callOptions ...callopt.Option) (r *notedemo.QueryNoteResponse, err error)
+	UpdateNote(ctx context.Context, Req *notedemo.UpdateNoteRequest, callOptions ...callopt.Option) (r *notedemo.UpdateNoteResponse, err error)
 }
 
 // NewClient creates a client for the service defined in IDL.
@@ -47,27 +47,27 @@ type kNoteServiceClient struct {
 	*kClient
 }
 
-func (p *kNoteServiceClient) CreateNote(ctx context.Context, Req *notedemo.CreateNoteResponse, callOptions ...callopt.Option) (r *notedemo.CreateNoteRequest, err error) {
+func (p *kNoteServiceClient) CreateNote(ctx context.Context, Req *notedemo.CreateNoteRequest, callOptions ...callopt.Option) (r *notedemo.CreateNoteResponse, err error) {
 	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
 	return p.kClient.CreateNote(ctx, Req)
 }
 
-func (p *kNoteServiceClient) MGetNote(ctx context.Context, Req *notedemo.MGetNoteResponse, callOptions ...callopt.Option) (r *notedemo.MGetNoteRequest, err error) {
+func (p *kNoteServiceClient) MGetNote(ctx context.Context, Req *notedemo.MGetNoteRequest, callOptions ...callopt.Option) (r *notedemo.MGetNoteResponse, err error) {
 	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
 	return p.kClient.MGetNote(ctx, Req)
 }
 
-func (p *kNoteServiceClient) DeleteNote(ctx context.Context, Req *notedemo.DeleteNoteResponse, callOptions ...callopt.Option) (r *notedemo.DeleteNoteRequest, err error) {
+func (p *kNoteServiceClient) DeleteNote(ctx context.Context, Req *notedemo.DeleteNoteRequest, callOptions ...callopt.Option) (r *notedemo.DeleteNoteResponse, err error) {
 	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
 	return p.kClient.DeleteNote(ctx, Req)
 }
 
-func (p *kNoteServiceClient) QueryNote(ctx context.Context, Req *notedemo.QueryNoteResponse, callOptions ...callopt.Option) (r *notedemo.QueryNoteRequest, err error) {
+func (p *kNoteServiceClient) QueryNote(ctx context.Context, Req *notedemo.QueryNoteRequest, callOptions ...callopt.Option) (r *notedemo.QueryNoteResponse, err error) {
 	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
 	return p.kClient.QueryNote(ctx, Req)
 }
 
-func (p *kNoteServiceClient) UpdateNote(ctx context.Context, Req *notedemo.UpdateNoteResponse, callOptions ...callopt.Option) (r *notedemo.UpdateNoteRequest, err error) {
+func (p *kNoteServiceClient) UpdateNote(ctx context.Context, Req *notedemo.UpdateNoteRequest, callOptions ...callopt.Option) (r *notedemo.UpdateNoteResponse, err error) {
 	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
 	return p.kClient.UpdateNote(ctx, Req)
 }

@@ -8,10 +8,8 @@ import (
 	"easy_note/pkg/errno"
 )
 
-// UserServiceImpl implements the last service interface defined in the IDL.
 type UserServiceImpl struct{}
 
-// CreateUser implements the UserServiceImpl interface.
 func (s *UserServiceImpl) CreateUser(ctx context.Context, req *userdemo.CreateUserRequest) (resp *userdemo.CreateUserResponse, err error) {
 	resp = new(userdemo.CreateUserResponse)
 
@@ -29,7 +27,6 @@ func (s *UserServiceImpl) CreateUser(ctx context.Context, req *userdemo.CreateUs
 	return resp, nil
 }
 
-// MGetUser implements the UserServiceImpl interface.
 func (s *UserServiceImpl) MGetUser(ctx context.Context, req *userdemo.MGetUserRequest) (resp *userdemo.MGetUserResponse, err error) {
 	resp = new(userdemo.MGetUserResponse)
 
@@ -48,7 +45,6 @@ func (s *UserServiceImpl) MGetUser(ctx context.Context, req *userdemo.MGetUserRe
 	return resp, nil
 }
 
-// CheckUser implements the UserServiceImpl interface.
 func (s *UserServiceImpl) CheckUser(ctx context.Context, req *userdemo.CheckUserRequest) (resp *userdemo.CheckUserResponse, err error) {
 	resp = new(userdemo.CheckUserResponse)
 

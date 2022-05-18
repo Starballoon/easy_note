@@ -46,7 +46,7 @@ func createNoteHandler(ctx context.Context, handler interface{}, arg, result int
 	switch s := arg.(type) {
 	case *streaming.Args:
 		st := s.Stream
-		req := new(notedemo.CreateNoteResponse)
+		req := new(notedemo.CreateNoteRequest)
 		if err := st.RecvMsg(req); err != nil {
 			return err
 		}
@@ -76,7 +76,7 @@ func newCreateNoteResult() interface{} {
 }
 
 type CreateNoteArgs struct {
-	Req *notedemo.CreateNoteResponse
+	Req *notedemo.CreateNoteRequest
 }
 
 func (p *CreateNoteArgs) Marshal(out []byte) ([]byte, error) {
@@ -87,7 +87,7 @@ func (p *CreateNoteArgs) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *CreateNoteArgs) Unmarshal(in []byte) error {
-	msg := new(notedemo.CreateNoteResponse)
+	msg := new(notedemo.CreateNoteRequest)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -95,9 +95,9 @@ func (p *CreateNoteArgs) Unmarshal(in []byte) error {
 	return nil
 }
 
-var CreateNoteArgs_Req_DEFAULT *notedemo.CreateNoteResponse
+var CreateNoteArgs_Req_DEFAULT *notedemo.CreateNoteRequest
 
-func (p *CreateNoteArgs) GetReq() *notedemo.CreateNoteResponse {
+func (p *CreateNoteArgs) GetReq() *notedemo.CreateNoteRequest {
 	if !p.IsSetReq() {
 		return CreateNoteArgs_Req_DEFAULT
 	}
@@ -109,10 +109,10 @@ func (p *CreateNoteArgs) IsSetReq() bool {
 }
 
 type CreateNoteResult struct {
-	Success *notedemo.CreateNoteRequest
+	Success *notedemo.CreateNoteResponse
 }
 
-var CreateNoteResult_Success_DEFAULT *notedemo.CreateNoteRequest
+var CreateNoteResult_Success_DEFAULT *notedemo.CreateNoteResponse
 
 func (p *CreateNoteResult) Marshal(out []byte) ([]byte, error) {
 	if !p.IsSetSuccess() {
@@ -122,7 +122,7 @@ func (p *CreateNoteResult) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *CreateNoteResult) Unmarshal(in []byte) error {
-	msg := new(notedemo.CreateNoteRequest)
+	msg := new(notedemo.CreateNoteResponse)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -130,7 +130,7 @@ func (p *CreateNoteResult) Unmarshal(in []byte) error {
 	return nil
 }
 
-func (p *CreateNoteResult) GetSuccess() *notedemo.CreateNoteRequest {
+func (p *CreateNoteResult) GetSuccess() *notedemo.CreateNoteResponse {
 	if !p.IsSetSuccess() {
 		return CreateNoteResult_Success_DEFAULT
 	}
@@ -138,7 +138,7 @@ func (p *CreateNoteResult) GetSuccess() *notedemo.CreateNoteRequest {
 }
 
 func (p *CreateNoteResult) SetSuccess(x interface{}) {
-	p.Success = x.(*notedemo.CreateNoteRequest)
+	p.Success = x.(*notedemo.CreateNoteResponse)
 }
 
 func (p *CreateNoteResult) IsSetSuccess() bool {
@@ -149,7 +149,7 @@ func mGetNoteHandler(ctx context.Context, handler interface{}, arg, result inter
 	switch s := arg.(type) {
 	case *streaming.Args:
 		st := s.Stream
-		req := new(notedemo.MGetNoteResponse)
+		req := new(notedemo.MGetNoteRequest)
 		if err := st.RecvMsg(req); err != nil {
 			return err
 		}
@@ -179,7 +179,7 @@ func newMGetNoteResult() interface{} {
 }
 
 type MGetNoteArgs struct {
-	Req *notedemo.MGetNoteResponse
+	Req *notedemo.MGetNoteRequest
 }
 
 func (p *MGetNoteArgs) Marshal(out []byte) ([]byte, error) {
@@ -190,7 +190,7 @@ func (p *MGetNoteArgs) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *MGetNoteArgs) Unmarshal(in []byte) error {
-	msg := new(notedemo.MGetNoteResponse)
+	msg := new(notedemo.MGetNoteRequest)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -198,9 +198,9 @@ func (p *MGetNoteArgs) Unmarshal(in []byte) error {
 	return nil
 }
 
-var MGetNoteArgs_Req_DEFAULT *notedemo.MGetNoteResponse
+var MGetNoteArgs_Req_DEFAULT *notedemo.MGetNoteRequest
 
-func (p *MGetNoteArgs) GetReq() *notedemo.MGetNoteResponse {
+func (p *MGetNoteArgs) GetReq() *notedemo.MGetNoteRequest {
 	if !p.IsSetReq() {
 		return MGetNoteArgs_Req_DEFAULT
 	}
@@ -212,10 +212,10 @@ func (p *MGetNoteArgs) IsSetReq() bool {
 }
 
 type MGetNoteResult struct {
-	Success *notedemo.MGetNoteRequest
+	Success *notedemo.MGetNoteResponse
 }
 
-var MGetNoteResult_Success_DEFAULT *notedemo.MGetNoteRequest
+var MGetNoteResult_Success_DEFAULT *notedemo.MGetNoteResponse
 
 func (p *MGetNoteResult) Marshal(out []byte) ([]byte, error) {
 	if !p.IsSetSuccess() {
@@ -225,7 +225,7 @@ func (p *MGetNoteResult) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *MGetNoteResult) Unmarshal(in []byte) error {
-	msg := new(notedemo.MGetNoteRequest)
+	msg := new(notedemo.MGetNoteResponse)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -233,7 +233,7 @@ func (p *MGetNoteResult) Unmarshal(in []byte) error {
 	return nil
 }
 
-func (p *MGetNoteResult) GetSuccess() *notedemo.MGetNoteRequest {
+func (p *MGetNoteResult) GetSuccess() *notedemo.MGetNoteResponse {
 	if !p.IsSetSuccess() {
 		return MGetNoteResult_Success_DEFAULT
 	}
@@ -241,7 +241,7 @@ func (p *MGetNoteResult) GetSuccess() *notedemo.MGetNoteRequest {
 }
 
 func (p *MGetNoteResult) SetSuccess(x interface{}) {
-	p.Success = x.(*notedemo.MGetNoteRequest)
+	p.Success = x.(*notedemo.MGetNoteResponse)
 }
 
 func (p *MGetNoteResult) IsSetSuccess() bool {
@@ -252,7 +252,7 @@ func deleteNoteHandler(ctx context.Context, handler interface{}, arg, result int
 	switch s := arg.(type) {
 	case *streaming.Args:
 		st := s.Stream
-		req := new(notedemo.DeleteNoteResponse)
+		req := new(notedemo.DeleteNoteRequest)
 		if err := st.RecvMsg(req); err != nil {
 			return err
 		}
@@ -282,7 +282,7 @@ func newDeleteNoteResult() interface{} {
 }
 
 type DeleteNoteArgs struct {
-	Req *notedemo.DeleteNoteResponse
+	Req *notedemo.DeleteNoteRequest
 }
 
 func (p *DeleteNoteArgs) Marshal(out []byte) ([]byte, error) {
@@ -293,7 +293,7 @@ func (p *DeleteNoteArgs) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *DeleteNoteArgs) Unmarshal(in []byte) error {
-	msg := new(notedemo.DeleteNoteResponse)
+	msg := new(notedemo.DeleteNoteRequest)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -301,9 +301,9 @@ func (p *DeleteNoteArgs) Unmarshal(in []byte) error {
 	return nil
 }
 
-var DeleteNoteArgs_Req_DEFAULT *notedemo.DeleteNoteResponse
+var DeleteNoteArgs_Req_DEFAULT *notedemo.DeleteNoteRequest
 
-func (p *DeleteNoteArgs) GetReq() *notedemo.DeleteNoteResponse {
+func (p *DeleteNoteArgs) GetReq() *notedemo.DeleteNoteRequest {
 	if !p.IsSetReq() {
 		return DeleteNoteArgs_Req_DEFAULT
 	}
@@ -315,10 +315,10 @@ func (p *DeleteNoteArgs) IsSetReq() bool {
 }
 
 type DeleteNoteResult struct {
-	Success *notedemo.DeleteNoteRequest
+	Success *notedemo.DeleteNoteResponse
 }
 
-var DeleteNoteResult_Success_DEFAULT *notedemo.DeleteNoteRequest
+var DeleteNoteResult_Success_DEFAULT *notedemo.DeleteNoteResponse
 
 func (p *DeleteNoteResult) Marshal(out []byte) ([]byte, error) {
 	if !p.IsSetSuccess() {
@@ -328,7 +328,7 @@ func (p *DeleteNoteResult) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *DeleteNoteResult) Unmarshal(in []byte) error {
-	msg := new(notedemo.DeleteNoteRequest)
+	msg := new(notedemo.DeleteNoteResponse)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -336,7 +336,7 @@ func (p *DeleteNoteResult) Unmarshal(in []byte) error {
 	return nil
 }
 
-func (p *DeleteNoteResult) GetSuccess() *notedemo.DeleteNoteRequest {
+func (p *DeleteNoteResult) GetSuccess() *notedemo.DeleteNoteResponse {
 	if !p.IsSetSuccess() {
 		return DeleteNoteResult_Success_DEFAULT
 	}
@@ -344,7 +344,7 @@ func (p *DeleteNoteResult) GetSuccess() *notedemo.DeleteNoteRequest {
 }
 
 func (p *DeleteNoteResult) SetSuccess(x interface{}) {
-	p.Success = x.(*notedemo.DeleteNoteRequest)
+	p.Success = x.(*notedemo.DeleteNoteResponse)
 }
 
 func (p *DeleteNoteResult) IsSetSuccess() bool {
@@ -355,7 +355,7 @@ func queryNoteHandler(ctx context.Context, handler interface{}, arg, result inte
 	switch s := arg.(type) {
 	case *streaming.Args:
 		st := s.Stream
-		req := new(notedemo.QueryNoteResponse)
+		req := new(notedemo.QueryNoteRequest)
 		if err := st.RecvMsg(req); err != nil {
 			return err
 		}
@@ -385,7 +385,7 @@ func newQueryNoteResult() interface{} {
 }
 
 type QueryNoteArgs struct {
-	Req *notedemo.QueryNoteResponse
+	Req *notedemo.QueryNoteRequest
 }
 
 func (p *QueryNoteArgs) Marshal(out []byte) ([]byte, error) {
@@ -396,7 +396,7 @@ func (p *QueryNoteArgs) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *QueryNoteArgs) Unmarshal(in []byte) error {
-	msg := new(notedemo.QueryNoteResponse)
+	msg := new(notedemo.QueryNoteRequest)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -404,9 +404,9 @@ func (p *QueryNoteArgs) Unmarshal(in []byte) error {
 	return nil
 }
 
-var QueryNoteArgs_Req_DEFAULT *notedemo.QueryNoteResponse
+var QueryNoteArgs_Req_DEFAULT *notedemo.QueryNoteRequest
 
-func (p *QueryNoteArgs) GetReq() *notedemo.QueryNoteResponse {
+func (p *QueryNoteArgs) GetReq() *notedemo.QueryNoteRequest {
 	if !p.IsSetReq() {
 		return QueryNoteArgs_Req_DEFAULT
 	}
@@ -418,10 +418,10 @@ func (p *QueryNoteArgs) IsSetReq() bool {
 }
 
 type QueryNoteResult struct {
-	Success *notedemo.QueryNoteRequest
+	Success *notedemo.QueryNoteResponse
 }
 
-var QueryNoteResult_Success_DEFAULT *notedemo.QueryNoteRequest
+var QueryNoteResult_Success_DEFAULT *notedemo.QueryNoteResponse
 
 func (p *QueryNoteResult) Marshal(out []byte) ([]byte, error) {
 	if !p.IsSetSuccess() {
@@ -431,7 +431,7 @@ func (p *QueryNoteResult) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *QueryNoteResult) Unmarshal(in []byte) error {
-	msg := new(notedemo.QueryNoteRequest)
+	msg := new(notedemo.QueryNoteResponse)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -439,7 +439,7 @@ func (p *QueryNoteResult) Unmarshal(in []byte) error {
 	return nil
 }
 
-func (p *QueryNoteResult) GetSuccess() *notedemo.QueryNoteRequest {
+func (p *QueryNoteResult) GetSuccess() *notedemo.QueryNoteResponse {
 	if !p.IsSetSuccess() {
 		return QueryNoteResult_Success_DEFAULT
 	}
@@ -447,7 +447,7 @@ func (p *QueryNoteResult) GetSuccess() *notedemo.QueryNoteRequest {
 }
 
 func (p *QueryNoteResult) SetSuccess(x interface{}) {
-	p.Success = x.(*notedemo.QueryNoteRequest)
+	p.Success = x.(*notedemo.QueryNoteResponse)
 }
 
 func (p *QueryNoteResult) IsSetSuccess() bool {
@@ -458,7 +458,7 @@ func updateNoteHandler(ctx context.Context, handler interface{}, arg, result int
 	switch s := arg.(type) {
 	case *streaming.Args:
 		st := s.Stream
-		req := new(notedemo.UpdateNoteResponse)
+		req := new(notedemo.UpdateNoteRequest)
 		if err := st.RecvMsg(req); err != nil {
 			return err
 		}
@@ -488,7 +488,7 @@ func newUpdateNoteResult() interface{} {
 }
 
 type UpdateNoteArgs struct {
-	Req *notedemo.UpdateNoteResponse
+	Req *notedemo.UpdateNoteRequest
 }
 
 func (p *UpdateNoteArgs) Marshal(out []byte) ([]byte, error) {
@@ -499,7 +499,7 @@ func (p *UpdateNoteArgs) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *UpdateNoteArgs) Unmarshal(in []byte) error {
-	msg := new(notedemo.UpdateNoteResponse)
+	msg := new(notedemo.UpdateNoteRequest)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -507,9 +507,9 @@ func (p *UpdateNoteArgs) Unmarshal(in []byte) error {
 	return nil
 }
 
-var UpdateNoteArgs_Req_DEFAULT *notedemo.UpdateNoteResponse
+var UpdateNoteArgs_Req_DEFAULT *notedemo.UpdateNoteRequest
 
-func (p *UpdateNoteArgs) GetReq() *notedemo.UpdateNoteResponse {
+func (p *UpdateNoteArgs) GetReq() *notedemo.UpdateNoteRequest {
 	if !p.IsSetReq() {
 		return UpdateNoteArgs_Req_DEFAULT
 	}
@@ -521,10 +521,10 @@ func (p *UpdateNoteArgs) IsSetReq() bool {
 }
 
 type UpdateNoteResult struct {
-	Success *notedemo.UpdateNoteRequest
+	Success *notedemo.UpdateNoteResponse
 }
 
-var UpdateNoteResult_Success_DEFAULT *notedemo.UpdateNoteRequest
+var UpdateNoteResult_Success_DEFAULT *notedemo.UpdateNoteResponse
 
 func (p *UpdateNoteResult) Marshal(out []byte) ([]byte, error) {
 	if !p.IsSetSuccess() {
@@ -534,7 +534,7 @@ func (p *UpdateNoteResult) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *UpdateNoteResult) Unmarshal(in []byte) error {
-	msg := new(notedemo.UpdateNoteRequest)
+	msg := new(notedemo.UpdateNoteResponse)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -542,7 +542,7 @@ func (p *UpdateNoteResult) Unmarshal(in []byte) error {
 	return nil
 }
 
-func (p *UpdateNoteResult) GetSuccess() *notedemo.UpdateNoteRequest {
+func (p *UpdateNoteResult) GetSuccess() *notedemo.UpdateNoteResponse {
 	if !p.IsSetSuccess() {
 		return UpdateNoteResult_Success_DEFAULT
 	}
@@ -550,7 +550,7 @@ func (p *UpdateNoteResult) GetSuccess() *notedemo.UpdateNoteRequest {
 }
 
 func (p *UpdateNoteResult) SetSuccess(x interface{}) {
-	p.Success = x.(*notedemo.UpdateNoteRequest)
+	p.Success = x.(*notedemo.UpdateNoteResponse)
 }
 
 func (p *UpdateNoteResult) IsSetSuccess() bool {
@@ -567,7 +567,7 @@ func newServiceClient(c client.Client) *kClient {
 	}
 }
 
-func (p *kClient) CreateNote(ctx context.Context, Req *notedemo.CreateNoteResponse) (r *notedemo.CreateNoteRequest, err error) {
+func (p *kClient) CreateNote(ctx context.Context, Req *notedemo.CreateNoteRequest) (r *notedemo.CreateNoteResponse, err error) {
 	var _args CreateNoteArgs
 	_args.Req = Req
 	var _result CreateNoteResult
@@ -577,7 +577,7 @@ func (p *kClient) CreateNote(ctx context.Context, Req *notedemo.CreateNoteRespon
 	return _result.GetSuccess(), nil
 }
 
-func (p *kClient) MGetNote(ctx context.Context, Req *notedemo.MGetNoteResponse) (r *notedemo.MGetNoteRequest, err error) {
+func (p *kClient) MGetNote(ctx context.Context, Req *notedemo.MGetNoteRequest) (r *notedemo.MGetNoteResponse, err error) {
 	var _args MGetNoteArgs
 	_args.Req = Req
 	var _result MGetNoteResult
@@ -587,7 +587,7 @@ func (p *kClient) MGetNote(ctx context.Context, Req *notedemo.MGetNoteResponse) 
 	return _result.GetSuccess(), nil
 }
 
-func (p *kClient) DeleteNote(ctx context.Context, Req *notedemo.DeleteNoteResponse) (r *notedemo.DeleteNoteRequest, err error) {
+func (p *kClient) DeleteNote(ctx context.Context, Req *notedemo.DeleteNoteRequest) (r *notedemo.DeleteNoteResponse, err error) {
 	var _args DeleteNoteArgs
 	_args.Req = Req
 	var _result DeleteNoteResult
@@ -597,7 +597,7 @@ func (p *kClient) DeleteNote(ctx context.Context, Req *notedemo.DeleteNoteRespon
 	return _result.GetSuccess(), nil
 }
 
-func (p *kClient) QueryNote(ctx context.Context, Req *notedemo.QueryNoteResponse) (r *notedemo.QueryNoteRequest, err error) {
+func (p *kClient) QueryNote(ctx context.Context, Req *notedemo.QueryNoteRequest) (r *notedemo.QueryNoteResponse, err error) {
 	var _args QueryNoteArgs
 	_args.Req = Req
 	var _result QueryNoteResult
@@ -607,7 +607,7 @@ func (p *kClient) QueryNote(ctx context.Context, Req *notedemo.QueryNoteResponse
 	return _result.GetSuccess(), nil
 }
 
-func (p *kClient) UpdateNote(ctx context.Context, Req *notedemo.UpdateNoteResponse) (r *notedemo.UpdateNoteRequest, err error) {
+func (p *kClient) UpdateNote(ctx context.Context, Req *notedemo.UpdateNoteRequest) (r *notedemo.UpdateNoteResponse, err error) {
 	var _args UpdateNoteArgs
 	_args.Req = Req
 	var _result UpdateNoteResult

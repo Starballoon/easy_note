@@ -15,7 +15,7 @@
 
 syntax = "proto3";
 package user;
-option go_package = "userdemo";
+option go_package = "notedemo";
 
 message BaseResp {
     int64 status_code = 1;

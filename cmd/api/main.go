@@ -53,10 +53,10 @@ func main() {
 
 	note1 := v1.Group("/note")
 	note1.Use(authMiddleware.MiddlewareFunc())
-	//note1.GET("/query", handlers.QueryNote)
-	//note1.POST("", handlers.CreateNote)
-	//note1.PUT("/:note_id", handlers.UpdateNote)
-	//note1.DELETE("/:note_id", handlers.DeleteNote)
+	note1.GET("/query", handlers.QueryNote)
+	note1.POST("", handlers.CreateNote)
+	note1.PUT("/:note_id", handlers.UpdateNote)
+	note1.DELETE("/:note_id", handlers.DeleteNote)
 	if err := http.ListenAndServe(":8080", r); err != nil {
 		klog.Fatal(err)
 	}
