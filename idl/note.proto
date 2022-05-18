@@ -13,7 +13,7 @@ message Note{
   int64 user_id = 2;
   string user_name = 3;
   string user_avatar = 4;
-  string tile = 5;
+  string title = 5;
   string content = 6;
   int64 create_time = 7;
 }
@@ -71,9 +71,9 @@ message QueryNoteResponse{
 }
 
 service NoteService{
-  rpc CreateNote(CreateNoteResponse) returns (CreateNoteRequest) {}
-  rpc MGetNote(MGetNoteResponse) returns (MGetNoteRequest) {}
-  rpc DeleteNote(DeleteNoteResponse) returns (DeleteNoteRequest) {}
-  rpc QueryNote(QueryNoteResponse) returns (QueryNoteRequest) {}
-  rpc UpdateNote(UpdateNoteResponse) returns (UpdateNoteRequest) {}
+  rpc CreateNote(CreateNoteRequest) returns (CreateNoteResponse) {}
+  rpc MGetNote(MGetNoteRequest) returns (MGetNoteResponse) {}
+  rpc DeleteNote(DeleteNoteRequest) returns (DeleteNoteResponse) {}
+  rpc QueryNote(QueryNoteRequest) returns (QueryNoteResponse) {}
+  rpc UpdateNote(UpdateNoteRequest) returns (UpdateNoteResponse) {}
 }
